@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "person-req.json",
+  "type": "object",
+  "properties": {
+	"mogId": { 
+		"type": "string" 
+	},  
+    "klantId": { 
+    	"type": "string" 
+    }    
+  },
+  "required":[
+    "mogId",  
+  	"klantId"  	
+  ]
+}

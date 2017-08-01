@@ -1,0 +1,25 @@
+{
+    "id": "BusinessModelObject",
+    "description": "Version: 0.1",
+    "type": "object",
+    "properties": {
+        "apgId": {
+            "description": "Unique identifier of the Object",
+            "type": "integer"
+        },
+        "RegistratieDatum": {
+            "type": "string"
+        },
+        "vervallenDatum": {
+            "type": "string"
+        },
+        "mogId": {
+            "description": "Unique identifier of the different funds registered within APG",
+            "type": "string"
+        },
+        "rootObjectType": {
+            "description": "Indication of the BOT type of the object. Example: Overeenkomst, Opdrachtgever, etc",
+            "type": "string"
+        }
+    }
+}

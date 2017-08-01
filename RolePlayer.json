@@ -1,0 +1,19 @@
+{
+    "id": "http://localhost/schemas/RolePlayer.json",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "http://localhost/schemas/BusinessModelObject.json"
+        },
+        {
+            "properties": {
+                "rolOmschrijving": {
+                    "type": "string"
+                },
+                "typeOmschrijving": {
+                    "type": "string"
+                }
+            }
+        }
+    ]
+}

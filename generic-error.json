@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "id": "http://schemas.api.apg.nl/generic-error",
+  "required": true,
+  "properties": 
+  {
+    "meta": 
+    {
+      "type": "object",
+      "required": true,
+      "properties":
+      {
+        "code":
+        {
+          "type": "string",
+          "required": true
+        },
+        "status":
+        {
+          "type": "string",
+          "required": true
+        },
+        "message":
+        {
+          "type": "string",
+          "required": true
+        }
+      }
+    },
+    "data": 
+    {
+      "type": "object",
+      "required": true
+    },
+    "links": 
+    {
+      "type": "object",
+      "required": true
+    }
+  }
+}

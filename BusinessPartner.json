@@ -1,0 +1,17 @@
+{
+    "id": "BusinessPartner",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "http://localhost/schemas/RolePlayer.json"
+        },
+        {
+            "properties": {
+                "taalCode": {
+                    "type": "string",
+                    "maxLength": 2
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,82 @@
+{
+    "id": "AdresItem",
+    "type": "object",
+    "properties": {
+        "gelijkAanAdresType": {
+            "description": "If value true, then correspondentieadres-values in CRM wil be the values from vestigingsadres, otherwise not",
+            "type": "boolean"
+        },
+        "gemeente": {
+            "type": "string"
+        },
+        "huisletter": {
+            "type": "string"
+        },
+        "huisnummerToevoeging": {
+            "type": "string"
+        },
+        "locatieOmschrijving": {
+            "type": "string"
+        },
+        "plaatsnaam": {
+            "type": "string"
+        },
+        "postbus": {
+            "type": "integer"
+        },
+        "provincie": {
+            "type": "string"
+        },
+        "regio": {
+            "type": "string"
+        },
+        "straatnaam": {
+            "type": "string"
+        },
+        "adresRegel1": {
+            "type": "string"
+        },
+        "adresRegel2": {
+            "type": "string"
+        },
+        "adresRegel3": {
+            "type": "string"
+        },
+        "adresRegel4": {
+            "type": "string"
+        },
+        "adresType": {
+            "type": "string",
+            "enum": [
+                "woonadres",
+                "correspondentieadres",
+                "adres financiële administratie",
+                "vestigingsadres",
+                "bezoekadres",
+                "afleveradres"
+            ]
+        },
+        "landcode": {
+            "type": "string"
+        },
+        "huisnummer": {
+            "type": "integer"
+        },
+        "postcode": {
+            "type": "string"
+        },
+        "heeftPostbus": {
+            "type": "string",
+            "enum": [
+                "JA",
+                "NEE"
+            ]
+        },
+        "afwijkendeTenaamstelling": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "adresType"
+    ]
+}

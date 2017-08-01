@@ -1,0 +1,9 @@
+{
+    "id": "Adres",
+    "type": "array",
+    "uniqueItems": true,
+    "additionalItems": true,
+    "items": {
+        "$ref": "http://localhost/schemas/AdresItem.json"
+    }
+}

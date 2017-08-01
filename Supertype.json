@@ -1,0 +1,15 @@
+{
+    "id": "http://localhost/schemas/Supertype.json",
+    "type": "object",
+    "properties": {
+        "property1": {
+            "type": "string"
+        },
+        "property2": {
+            "type": "string"
+        },
+        "property3": {
+            "type": "string"
+        }
+    }
+}

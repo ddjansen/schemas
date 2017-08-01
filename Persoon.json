@@ -1,0 +1,81 @@
+{
+      "id": "Persoon",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "http://localhost/schemas/BusinessPartner.json"
+        },
+        {
+          "properties": {
+            "isPostAdresOnjuist": {
+              "type": "string",
+              "default": "NEE"
+            },
+            "roepnaam": {
+              "type": "string",
+              "maxLength": 100
+            },
+            "voornamen": {
+              "type": "string",
+              "maxLength": 200
+            },
+            "aanhefAfkorting": {
+              "type": "string",
+              "maxLength": 10
+            },
+            "aanhefVolledig": {
+              "type": "string",
+              "maxLength": 10
+            },
+            "volledigeNaam": {
+              "type": "string",
+              "maxLength": 200
+            },
+            "achternaam": {
+              "type": "string",
+              "maxLength": 200
+            },
+            "geslachtsnaam": {
+              "type": "string",
+              "maxLength": 200
+            },
+            "voorletters": {
+              "type": "string",
+              "maxLength": 20
+            },
+            "geslacht": {
+              "type": "string"
+            },
+            "titelAchterNaam": {
+              "type": "string"
+            },
+            "titelVoorNaam": {
+              "type": "string"
+            },
+            "voorvoegsels": {
+              "type": "string"
+            },
+            "persoonIdCRM": {
+              "type": "string"
+            },
+            "persoonIdCWR": {
+              "type": "integer"
+            },
+            "contactpunt": {
+              "type": "object",
+              "properties": {
+                "adres": {
+                  "$ref": "http://localhost/schemas/Adres.json"
+                },
+                "email": {
+                  "$ref": "http://localhost/schemas/Email.json"
+                },
+                "telefoon": {
+                  "$ref": "http://localhost/schemas/Telefoon.json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }

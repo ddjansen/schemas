@@ -1,0 +1,20 @@
+{
+    "id": "Email",
+    "type": "object",
+    "properties": {
+        "emailadress": {
+            "type": "string"
+        },
+        "mailType": {
+            "type": "string",
+            "enum": [
+                "Business",
+                "Correspondentie",
+                "Factuur"
+            ]
+        },
+        "taalcodeEmail": {
+            "type": "string"
+        }
+    }
+}

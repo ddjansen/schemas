@@ -1,0 +1,15 @@
+﻿{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+	"id": "http://localhost/schemas/SubType.json",
+    "type": "object",	  
+	"allOf": [
+		{
+		"$ref": "http://localhost/schemas/Supertype.json"
+		}
+	],
+    "properties": {
+        "property4": {
+            "type": "string"
+        }
+    }   
+}

@@ -1,0 +1,18 @@
+{
+    "id": "#Telefoon",
+    "type": "object",
+    "properties": {
+        "extensie": {
+            "type": "string"
+        },
+        "mobiel": {
+            "type": "string"
+        },
+        "telefoonnummer": {
+            "type": "string"
+        },
+        "landcode": {
+            "type": "string"
+        }
+    }
+}

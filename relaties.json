@@ -1,0 +1,157 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "relatie.json",
+  "type": "object",
+  "$ref": "#Relatie",
+  "definitions": {
+    "BusinessModelObject": {
+      "id": "#BusinessModelObject",
+      "description": "Version: 0.1",
+      "type": "object",
+      "properties": {
+        "apgId": {
+          "description": "Unique identifier of the Object",
+          "type": "integer"
+        },
+        "RegistratieDatum": {
+          "type": "string"
+        },
+        "vervallenDatum": {
+          "type": "string"
+        },
+        "mogId": {
+          "description": "Unique identifier of the different funds registered within APG",
+          "type": "string"
+        },
+        "rootObjectType": {
+          "description": "Indication of the BOT type of the object. Example: Overeenkomst, Opdrachtgever, etc",
+          "type": "string"
+        }
+      }
+    },
+    "Relatie": {
+      "id": "#Relatie",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#BusinessModelObject"
+        },
+        {
+          "properties": {
+            "relatieId": {
+              "type": "string"
+            },
+            "bronsysteem": {
+              "type": "string",
+              "enum": [
+                "CRM",
+                "GWS",
+                "CWR"
+              ]
+            },
+            "objecttype": {
+              "type": "string"
+            },
+            "vanafDatumRelatie": {
+              "type": "string"
+            },
+            "totDatumRelatie": {
+              "type": "string"
+            },
+            "relatieSoort": {
+              "type": "string",
+              "enum": [
+                "gehuwd",
+                "geregistreerd partnerschap",
+                "heeft als bestuurder",
+                "heeft als curator",
+                "heeft als dienstverlener",
+                "heeft als financiele administratie",
+                "heeft als medeweker financiele administratie",
+                "heeft medewerker",
+                "is bestuurder van",
+                "is curator van",
+                "is dienstverlener van",
+                "is financiele administratie van",
+                "is medewerker financiele administratie van",
+                "is medewerker van",
+                "notarieel partnerschap",
+                "heeft contactpersoon",
+                "ouder van kind",
+                "samenwonend",
+                "werkt bij",
+                "werkt voor"
+              ]
+            },
+            "relatieMet": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "anyOf": [
+                  {
+                    "$ref": "#Relatie"
+                  },
+                  {
+                    "$ref": "#WerktBij"
+                  },
+                  {
+                    "$ref": "#WerktVoor"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "required": [
+        "rootObjectType",
+        "relatieId",
+        "bronsysteem",
+        "objecttype"
+      ]
+    },
+    "werktbij": {
+      "id": "#WerktBij",
+      "type": "object",
+      "$ref": "#Relatie",
+      "required": [
+        "vanafDatumRelatie",
+        "relatieSoort"
+      ]
+    },
+    "werktvoor": {
+      "id": "#WerktVoor",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#Relatie"
+        },
+        {
+          "properties": {
+            "rol": {
+              "type": "string",
+              "enum": [
+                "bestuurder",
+                "financiele administratie",
+                "gegevensleverancier",
+                "personeel salarisadministratie"
+              ]
+            },            
+            "werktBijRelatieBeeindigd": { 
+              "type": "string",
+              "enum": [
+                "true",
+                "false"
+              ]                
+            }
+          }
+        }
+      ],
+      "required": [
+        "vanafDatumRelatie",
+        "relatieSoort",
+        "rol"
+      ]
+    }
+  }
+}
